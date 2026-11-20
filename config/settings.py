@@ -72,11 +72,11 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Database Configuration (MySQL with fallback support)
-USE_SQLITE = os.getenv('USE_SQLITE', 'False').lower() in ('true', '1', 't')
+USE_SQLITE = os.getenv(
+    'USE_SQLITE', 'False'
+).lower() in ('true', '1', 't')
 
 if USE_SQLITE:
     DATABASES = {
@@ -93,10 +93,9 @@ else:
             'USER': os.getenv('DB_USER'),
             'PASSWORD': os.getenv('DB_PASSWORD'),
             'HOST': os.getenv('DB_HOST'),
-            'PORT': os.getenv('DB_PORT')
+            'PORT': os.getenv('DB_PORT', '5432'),
         }
     }
-
 # Custom User Model
 AUTH_USER_MODEL = 'accounts.User'
 
