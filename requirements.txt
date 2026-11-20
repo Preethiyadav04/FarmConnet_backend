@@ -1,0 +1,13 @@
+# Core Framework & API
+Django>=6.0.0
+djangorestframework>=3.15.0
+djangorestframework-simplejwt>=5.4.0
+django-cors-headers>=4.7.0
+
+# Database Driver
+mysqlclient>=2.2.8
+
+# Utilities & Media
+Pillow>=11.0.0
+python-dotenv>=1.0.0
+requests>=2.32.0
